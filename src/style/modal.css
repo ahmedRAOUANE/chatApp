@@ -1,0 +1,54 @@
+.overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.463);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.trnsparent {
+        background-color: transparent;
+    }
+    .modal {
+        width: 60%;
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+        background-color: #fff;
+        z-index: 1000;
+
+        .search-window {
+            width: 100%;
+        }
+    }
+
+        .user-menu {
+            position: absolute;
+            right: 15%;
+            top: 20%;
+            z-index: 27;
+            background-color: blueviolet;
+            width: 200px;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: var(--out-line), var(--box-shadow);
+    
+            ul li {
+                box-shadow: var(--out-line);
+                border-radius: 5px;
+                color: #fff;
+    
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+    
+                button {
+                    font-size: 20px;
+                    box-shadow: none;
+                    width: 100%;
+                    text-align: left;
+                }
+            }
+        }
+}

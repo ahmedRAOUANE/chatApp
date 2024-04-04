@@ -113,7 +113,7 @@ const Home = () => {
             <p>select a chat to start messaging</p>
           )}
           <form className="chat-input box" onSubmit={handleSendMessage}>
-            <input ref={messageRef} placeholder="type something..." type="text" />
+            <input name="message" autoComplete="off" ref={messageRef} placeholder="type something..." type="text" />
             <button type="submit">send</button>
           </form>
         </div>

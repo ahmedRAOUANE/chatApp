@@ -23,7 +23,7 @@ const Login = () => {
         }
 
         try {
-            const response = await signInWithEmailAndPassword(auth,userCredentials.email, userCredentials.password);
+            const response = await signInWithEmailAndPassword(auth, userCredentials.email, userCredentials.password);
             const user = response.user;
             dispatch(setUser(user));
         } catch (err) {
@@ -31,18 +31,18 @@ const Login = () => {
         }
     }
 
-  return (
-      <div className="white collumn box">
-        <h2>login</h2>
-        <form onSubmit={handleLogin}>
-            <div className="input-holder"><input ref={emailRef} type="email" placeholder="email" /></div>
-            <div className="input-holder"><input ref={passwordRef} type="password" placeholder="password" /></div>
-            <button type="submit">submit</button>
-        </form>
-        <hr />
-          <span>you don&apos;t have an account?, <Link to={'/signup'}>Signup</Link></span>
-    </div>
-  )
+    return (
+        <div className="white collumn box">
+            <h2>login</h2>
+            <form onSubmit={handleLogin}>
+                <div className="input-holder"><input autoComplete="email" id="email" ref={emailRef} type="email" placeholder="email" /></div>
+                <div className="input-holder"><input autoComplete="off" id="password" ref={passwordRef} type="password" placeholder="password" /></div>
+                <button type="submit">submit</button>
+            </form>
+            <hr />
+            <span>you don&apos;t have an account?, <Link to={'/signup'}>Signup</Link></span>
+        </div>
+    )
 }
 
 export default Login;

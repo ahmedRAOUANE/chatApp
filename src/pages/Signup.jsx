@@ -22,27 +22,27 @@ const Signup = () => {
 
     try {
       await createUserWithEmailAndPassword(auth, userCredentials.email, userCredentials.password)
-      .then(res => {
-        updateProfile(res.user, {
-          displayName: userCredentials.displayName,
+        .then(res => {
+          updateProfile(res.user, {
+            displayName: userCredentials.displayName,
+          })
         })
-      })
     } catch (err) {
       console.log("Error signup: ", err);
     }
   }
 
   return (
-      <div className="white collumn box">
-        <h2>craete an accout</h2>
-        <form onSubmit={handleSignup}>
-            <div className="input-holder"><input ref={emailRef} type="email" placeholder="email" /></div>
-            <div className="input-holder"><input ref={displayNameRef} type="text" placeholder="name" /></div>
-            <div className="input-holder"><input ref={passwordRef} type="password" placeholder="password" /></div>
-            <button type="submit">submit</button>
-        </form>
-        <hr />
-        <span>all ready have an account?, <Link to={"/"}>login</Link></span>
+    <div className="white collumn box">
+      <h2>craete an accout</h2>
+      <form onSubmit={handleSignup}>
+        <div className="input-holder"><input autoComplete="email" id="email" ref={emailRef} type="email" placeholder="email" /></div>
+        <div className="input-holder"><input autoComplete="given-name" id="name" ref={displayNameRef} type="text" placeholder="name" /></div>
+        <div className="input-holder"><input autoComplete="off" id="password" ref={passwordRef} type="password" placeholder="password" /></div>
+        <button type="submit">submit</button>
+      </form>
+      <hr />
+      <span>all ready have an account?, <Link to={"/"}>login</Link></span>
     </div>
   )
 }
